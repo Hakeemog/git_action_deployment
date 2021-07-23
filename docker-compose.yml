@@ -1,0 +1,26 @@
+
+version: '2.4'
+services:
+
+    smart-assignment:  &smart-assignment
+        build: ./
+        image: smart-assignment
+        cpu_shares: 2048
+        volumes:
+            - ../code-scanner:/usr/src/app/
+        command: bash -c "npm install && dos2unix ./docker/run.sh && bash ./docker/run.sh"
+        environment: &smart-assignment-env
+            - ENV=local
+            # - PORT=8080
+            - JWT_SECRET=********
+            - MOOVE_USERNAME=monitoring@mooveafrica.com
+            - MOOVE_PASSWORD=moovemonitoring
+            - MOOVE_TOKEN=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+            - CMS_DEV_API=https://dev-cms-ops.moove.africa
+        ports:
+            - 8081:8081
+            - 3000:3000
+        expose:
+            - "8081"
+            - "3000"
+

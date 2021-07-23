@@ -1,0 +1,7 @@
+ENV=
+PORT=
+JWT_SECRET=moovemonitoring
+MOOVE_USERNAME=monitoring@mooveafrica.com
+MOOVE_PASSWORD=moovemonitoring
+MOOVE_TOKEN= 4JcaoizodVFjAwzE1zlNd8wupjtKpK45+uVD0Fhn
+CMS_DEV_API=
